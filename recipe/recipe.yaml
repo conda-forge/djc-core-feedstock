@@ -3,7 +3,7 @@ schema_version: 1
 
 context:
   name: djc-core
-  version: "1.3.1"
+  version: "1.4.0"
 
 package:
   name: ${{ name|lower }}
@@ -11,10 +11,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/djc_core-${{ version }}.tar.gz
-  sha256: 73d5f42550d3fe8a776cc94778e889c65f8651fdb99ecf343d48a3547c6841b2
+  sha256: f85c3e4b4de1f39c1b0ed23013ee748e2c833e4a9b90c4f01f94c9ec7be9d7dd
 
 build:
-  number: 1
+  number: 0
   script:
     - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
     - ${{ PYTHON }}  -m pip install . -vv --no-deps --no-build-isolation
